@@ -24,3 +24,12 @@ CREATE TABLE IF NOT EXISTS tasks (
 
 
 );
+
+CREATE TABLE audit_logs (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER,
+    action VARCHAR(120) NOT NULL,
+    entity_name VARCHAR(120) NOT NULL,
+    entity_id INTEGER,
+    created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
