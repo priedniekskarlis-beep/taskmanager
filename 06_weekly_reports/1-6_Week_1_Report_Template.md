@@ -2,8 +2,8 @@
 
 ## Student Information
 
-Student name:
-Group:
+Student name: Kārlis Priednieks
+Group: PX25
 Project ID: 1-6
 Project name: Task Management Application
 Week number: 1
@@ -13,29 +13,33 @@ Week number: 1
 Project setup, repository creation, requirements review, wireframes, database draft, Docker baseline.
 
 ## Completed Work
+Repository setup, setting up and running Docker, getting the starter page to show up
 
-Describe what was completed during the week.
 
 ## GitHub Commits
+https://github.com/priedniekskarlis-beep/taskmanager/commit/a2e884b446864eb605da478e2115d3bc3c5aa3f7
+https://github.com/priedniekskarlis-beep/taskmanager/commit/34a696d6c99a87c20aebc41ca9b2298e046267ab
 
-Add links or commit hashes.
+
 
 ## Screenshots / Evidence
+docker_running.png - shows docker compose ps output
+github_repo.png - shows files that are pushed to the GitHub repository
+localhost_starter.png - shows the starter page at localhost:8080
+wsl_error.png - shows WSL network error
 
-List screenshots added to 07_screenshots_and_evidence.
 
 ## Problems Found
+Access to the WSL network was blocked while connecting WSL to VS Code.
 
-Describe technical problems, blockers, or questions.
 
 ## Solutions Applied
+Switching from Ubuntu to Windows and VSC.
 
-Describe how problems were solved.
 
 ## Next Week Plan
+Start creating the database and backend
 
-Describe what will be done next.
 
 ## Supervisor Notes
 
-To be completed by the practice supervisor if needed.
