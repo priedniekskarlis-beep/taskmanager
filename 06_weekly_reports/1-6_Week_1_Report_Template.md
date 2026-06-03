@@ -13,7 +13,8 @@ Week number: 1
 Project setup, repository creation, requirements review, wireframes, database draft, Docker baseline.
 
 ## Completed Work
-Repository setup, setting up and running Docker, getting the starter page to show up
+Repository setup, setting up and running Docker, getting the starter page to show up.
+Wrote database code to implement users and tasks tables, and added starting data.
 
 
 ## GitHub Commits
@@ -27,6 +28,7 @@ docker_running.png - shows docker compose ps output
 github_repo.png - shows files that are pushed to the GitHub repository
 localhost_starter.png - shows the starter page at localhost:8080
 wsl_error.png - shows WSL network error
+database_running.png - shows the database schema running in docker
 
 
 ## Problems Found
