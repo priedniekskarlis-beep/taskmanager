@@ -14,8 +14,10 @@ Project setup, repository creation, requirements review, wireframes, database dr
 
 ## Completed Work
 Repository setup, setting up and running Docker, getting the starter page to show up.
-Wrote database code to implement users and tasks tables, and added starting data.
-
+Wrote database code to implement users and tasks tables, and added starting data to them.
+Checked the columns and the connection between tasks and users inside the database through terminal.
+Created a git attributes file to convert line endings across Windows and Linux.
+Created a wireframe.
 
 ## GitHub Commits
 https://github.com/priedniekskarlis-beep/taskmanager/commit/a2e884b446864eb605da478e2115d3bc3c5aa3f7
@@ -33,11 +35,11 @@ database_running.png - shows the database schema running in docker
 
 ## Problems Found
 Access to the WSL network was blocked while connecting WSL to VS Code.
-
+SQL commands weren't allowed with the database being up, because the system was trying to use the default system name (practice_project) instead of recognizing the name in the database configuration (student).
 
 ## Solutions Applied
-Switching from Ubuntu to Windows and VSC.
-
+Switching from Ubuntu to Windows with VSC.  
+Used a explicit terminal command flag (specific instruction) '-U student' that signed-in manually rather than automatically and gave control and overview over the tables.
 
 ## Next Week Plan
 Start creating the database and backend
