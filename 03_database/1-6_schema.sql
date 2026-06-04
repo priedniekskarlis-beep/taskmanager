@@ -1,14 +1,14 @@
 -- Create project-specific database schema here.
 -- Student must update this file during implementation.
 
-CREATE TABLE IF NOT EXISTS users (  
-    id SERIAL PRIMARY KEY,    
+CREATE TABLE IF NOT EXISTS users (
+    id SERIAL PRIMARY KEY,
     full_name VARCHAR(120) NOT NULL,
     email VARCHAR(160) NOT NULL UNIQUE,
-    role VARCHAR(50) NOT NULL,
+    password_hash VARCHAR(255) NOT NULL,
+    role VARCHAR(50) NOT NULL CHECK (role IN ('administrator', 'user')),
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
-    password hash VARCHAR(255) NOT NULL,
 );
 
 CREATE TABLE IF NOT EXISTS tasks (
@@ -20,12 +20,10 @@ CREATE TABLE IF NOT EXISTS tasks (
     due_date DATE,
     assigned_to INT REFERENCES users(id) ON DELETE SET NULL,
     created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-
-
+    updated_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
-CREATE TABLE audit_logs (
+CREATE TABLE IF NOT EXISTS audit_logs (
     id SERIAL PRIMARY KEY,
     user_id INTEGER,
     action VARCHAR(120) NOT NULL,

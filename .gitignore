@@ -1,0 +1,12 @@
+# Environment variables - never push secrets to GitHub
+.env
+
+# Claude Cowork internal file
+CLAUDE.md
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/

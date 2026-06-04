@@ -1,7 +1,7 @@
 #convert all files to the native line endings of the platform
 * text=auto
 
-#declare files that will always have LF ( linux line endings ) line endings on checkout
+#declare files that will always have LF ( linux line endings ) line endings  
 *.sh text eol=lf
 *.sql text eol=lf
 *.yml text eol=lf

@@ -13,13 +13,20 @@ Week number: 1
 Project setup, repository creation, requirements review, wireframes, database draft, Docker baseline.
 
 ## Completed Work
-Repository setup, setting up and running Docker, getting the starter page to show up.
-Wrote database code to implement users and tasks tables, and added starting data to them.
+Day 1: Repository setup, setting up and running Docker, getting the starter page to show up.
+Day 2: Wrote database code to implement users and tasks tables, and added starting data to them.
 Checked the columns and the connection between tasks and users inside the database through terminal.
-Created a git attributes file to convert line endings across Windows and Linux.
-Created a wireframe.
+Day 3: Created a git attributes file to convert line endings across Windows and Linux.
+Created a wireframe. Completed the database verification, installation and documentation.
+Day 4: Fully wrote the README file for week 1 for project setup and overview. Created a .gitignore file for .env protection. Fixed the incomplete SQL schema and seed.
 
 ## GitHub Commits
+https://github.com/priedniekskarlis-beep/taskmanager/commit/ffbbc1a9e56606f4f3a26d554caffe5004fdb417
+https://github.com/priedniekskarlis-beep/taskmanager/commit/4cb21fb1174588f2f45a980f2d6234d47f7dad4c
+https://github.com/priedniekskarlis-beep/taskmanager/commit/135a5f5b5e3aee888163740d8991803174c392de
+https://github.com/priedniekskarlis-beep/taskmanager/commit/c4efe052d62c6f0caec2410afbe8f8485de010ad
+https://github.com/priedniekskarlis-beep/taskmanager/commit/766de93dc7adc66cc71dafa4099d6bd0729c1488
+https://github.com/priedniekskarlis-beep/taskmanager/commit/29e482758e91543075faae16d9c786240dd7ff68
 https://github.com/priedniekskarlis-beep/taskmanager/commit/a2e884b446864eb605da478e2115d3bc3c5aa3f7
 https://github.com/priedniekskarlis-beep/taskmanager/commit/34a696d6c99a87c20aebc41ca9b2298e046267ab
 
