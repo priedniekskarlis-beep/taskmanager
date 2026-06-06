@@ -19,6 +19,8 @@ Checked the columns and the connection between tasks and users inside the databa
 Day 3: Created a git attributes file to convert line endings across Windows and Linux.
 Created a wireframe. Completed the database verification, installation and documentation.
 Day 4: Fully wrote the README file for week 1 for project setup and overview. Created a .gitignore file for .env protection. Fixed the incomplete SQL schema and seed.
+Day 5: Wrote the HTML file in frontend.
+
 
 ## GitHub Commits
 https://github.com/priedniekskarlis-beep/taskmanager/commit/ffbbc1a9e56606f4f3a26d554caffe5004fdb417

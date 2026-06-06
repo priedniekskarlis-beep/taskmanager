@@ -1,0 +1,41 @@
+body {
+    background: #eef0f2;
+}
+
+.layout {
+    display: flex;
+}
+
+main {
+    display: flex;
+    gap: 16px;
+    flex: 1;
+}
+
+aside {
+    width: 250px;
+}
+
+.column {
+    flex: 1;
+    background: #f4f4f4;
+    padding: 12px;
+    border-radius: 8px;
+}
+
+.card {
+    background: #ffffff;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+}
+
+.taskentry {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+header {
+    text-align: center;
+}
