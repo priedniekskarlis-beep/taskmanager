@@ -19,7 +19,9 @@ Checked the columns and the connection between tasks and users inside the databa
 Day 3: Created a git attributes file to convert line endings across Windows and Linux.
 Created a wireframe. Completed the database verification, installation and documentation.
 Day 4: Fully wrote the README file for week 1 for project setup and overview. Created a .gitignore file for .env protection. Fixed the incomplete SQL schema and seed.
-Day 5: Wrote the HTML file in frontend.
+Day 5: Wrote the initial HTML file in frontend.
+day 6: Wrote the initial CSS file in frontend.
+day 7: Expanded the frontend to match the wireframe sketch. Added an admin panel, reordered the task entry form fields and moved it to the bottom. Styled the sidebar with 3 boxes using a reusable CSS .panel class and a flexbox column layout, making the sidebar overseeable.
 
 
 ## GitHub Commits
@@ -45,10 +47,14 @@ database_running.png - shows the database schema running in docker
 ## Problems Found
 Access to the WSL network was blocked while connecting WSL to VS Code.
 SQL commands weren't allowed with the database being up, because the system was trying to use the default system name (practice_project) instead of recognizing the name in the database configuration (student).
+Updated CSS was not appearing in the browser because it was loading an old cached
+copy of the stylesheet.
 
 ## Solutions Applied
 Switching from Ubuntu to Windows with VSC.  
-Used a explicit terminal command flag (specific instruction) '-U student' that signed-in manually rather than automatically and gave control and overview over the tables.
+Used a explicit terminal command flag (specific instruction) '-U student' that signed-in manually rather than automatically and gave control and overview over the tables. 
+Added a cache-busting query string (style.css?v=2) to force a fresh download, and
+learned to use the browser DevTools "Disable cache" option while developing.
 
 ## Next Week Plan
 Start creating the database and backend
