@@ -2,35 +2,34 @@
 
 ## Student Information
 
-Student name:
-Group:
+Student name: Kārlis Priednieks
+Group: PX25
 Project ID: 1-6
 Project name: Task Management Application
 Week number: 2
 
 ## Planned Work For This Week
 
-Core database implementation, backend structure, first API endpoints, frontend skeleton, initial test cases.
+Implement the database layer in the backend, backend structure, first API endpoints, initial test cases.
 
 ## Completed Work
+Day 8: Set up DBeaver and connected it to the PostgreSQL database. Started the backend by installing python, creating an isolated virtual environment in the backend folder, installing Flask, and saving the dependencies to requirements.txt. Wrote my first Flask app to confirm the dev server runs in the browser.     
 
-Describe what was completed during the week.
 
 ## GitHub Commits
 
 Add links or commit hashes.
 
 ## Screenshots / Evidence
-
-List screenshots added to 07_screenshots_and_evidence.
+flask_backend_running.png - shows the first flask app responding at localhost:5000
 
 ## Problems Found
+In PowerShell, cd..\.. gave a "not recognized" error.
 
-Describe technical problems, blockers, or questions.
 
 ## Solutions Applied
+Learned that PowerShell requires a space after cd (unlike the old Command Prompt), so cd ..\.. with a space works.
 
-Describe how problems were solved.
 
 ## Next Week Plan
 
