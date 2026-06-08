@@ -46,7 +46,7 @@ github_repo.png - shows files that are pushed to the GitHub repository
 localhost_starter.png - shows the starter page at localhost:8080
 wsl_error.png - shows WSL network error
 database_running.png - shows the database schema running in docker
-
+webapp_design.png - shows the current webapp ui design
 
 ## Problems Found
 Access to the WSL network was blocked while connecting WSL to VS Code.
