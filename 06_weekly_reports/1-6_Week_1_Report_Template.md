@@ -25,6 +25,10 @@ day 7: Expanded the frontend to match the wireframe sketch. Added an admin panel
 
 
 ## GitHub Commits
+https://github.com/priedniekskarlis-beep/taskmanager/commit/08a0c6f3d9fca37d014714f21ccf3c4da1f0f868
+https://github.com/priedniekskarlis-beep/taskmanager/commit/fca5ca8f29a22f2823811dc6c40ac8fcfc76c5c8
+https://github.com/priedniekskarlis-beep/taskmanager/commit/1febb8134e4a8de20c4dde510eca6ee12ee5b58c
+https://github.com/priedniekskarlis-beep/taskmanager/commit/94d09c4883774413d53f2082a7752eb52a53d59d
 https://github.com/priedniekskarlis-beep/taskmanager/commit/ffbbc1a9e56606f4f3a26d554caffe5004fdb417
 https://github.com/priedniekskarlis-beep/taskmanager/commit/4cb21fb1174588f2f45a980f2d6234d47f7dad4c
 https://github.com/priedniekskarlis-beep/taskmanager/commit/135a5f5b5e3aee888163740d8991803174c392de
