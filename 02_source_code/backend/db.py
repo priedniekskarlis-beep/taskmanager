@@ -19,3 +19,14 @@ def get_all_tasks():
     conn.close()
     return tasks
 
+def create_task(title, status):
+    conn = get_connection()
+    with conn.cursor(row_factory=dict_row) as cur:
+        cur.execute(
+            "INSERT INTO tasks (title, status) VALUES (%s, %s) RETURNING id, title, status",
+            (title, status),
+        )
+        new_task = cur.fetchone()
+    conn.commit()
+    conn.close()
+    return new_task

@@ -1,5 +1,5 @@
-from flask import Flask, jsonify
-from db import get_all_tasks
+from flask import Flask, jsonify, request
+from db import get_all_tasks, create_task
 
 app = Flask(__name__)
 
@@ -7,9 +7,13 @@ app = Flask(__name__)
 def home():
     return "Hello from the Task Manager backend!"
 
-@app.route("/tasks")
+@app.route("/tasks", methods=["GET", "POST"])
 def tasks():
-   return jsonify(get_all_tasks())
+    if request.method == "POST":
+        data = request.get_json()
+        new_task = create_task(data["title"], data["status"])
+        return jsonify(new_task), 201
+    return jsonify(get_all_tasks())
 
 if __name__ == "__main__":
     app.run(debug=True)
