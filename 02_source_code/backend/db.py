@@ -30,3 +30,12 @@ def create_task(title, status):
     conn.commit()
     conn.close()
     return new_task
+
+def delete_task(task_id):
+    conn = get_connection()
+    with conn.cursor() as cur:
+        cur.execute("DELETE FROM tasks WHERE id = %s", (task_id,))
+        deleted_count = cur.rowcount
+    conn.commit()
+    conn.close()
+    return deleted_count

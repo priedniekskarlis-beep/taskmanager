@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from db import get_all_tasks, create_task
+from db import get_all_tasks, create_task, delete_task
 
 app = Flask(__name__)
 
@@ -18,6 +18,13 @@ def tasks():
         new_task = create_task(title, status)
         return jsonify(new_task), 201
     return jsonify(get_all_tasks())
+
+@app.route("/tasks/<int:task_id>", methods=["DELETE"])
+def delete_task_route(task_id):
+    deleted = delete_task(task_id)
+    if deleted == 0:
+        return jsonify({"error": "Task not found"}), 404
+    return jsonify({"message": "Task deleted"}), 200
 
 if __name__ == "__main__":
     app.run(debug=True)
