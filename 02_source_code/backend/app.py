@@ -1,5 +1,5 @@
 from flask import Flask, jsonify, request
-from db import get_all_tasks, create_task, delete_task
+from db import get_all_tasks, create_task, delete_task, update_task
 
 app = Flask(__name__)
 
@@ -25,6 +25,18 @@ def delete_task_route(task_id):
     if deleted == 0:
         return jsonify({"error": "Task not found"}), 404
     return jsonify({"message": "Task deleted"}), 200
+
+@app.route("/tasks/<int:task_id>", methods=["PUT"])
+def update_task_route(task_id):
+    data = request.get_json(silent=True)
+    if not data or not data.get("title"):
+        return jsonify({"error": "Title is required"}), 400
+    title = data["title"]
+    status = data.get("status", "To do")
+    updated = update_task(task_id, title, status)
+    if updated is None:
+        return jsonify({"error": "Task not found"}), 404
+    return jsonify(updated), 200
 
 if __name__ == "__main__":
     app.run(debug=True)

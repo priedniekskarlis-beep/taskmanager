@@ -18,7 +18,7 @@ Day 9: Connected the backend to the PostgreSQL database. Installed psycopg drive
 day 10: Built a 'create-task' feature on the backend. Added a create_task function in 'db.py' that inserts a task with a secure query (placeholder not string values) and commits it. Updated the /tasks route to accept POST requests, reading the new task from the JSON body and returning it with a created status. Tested it with a POST request and confirmed the task was saved.
 Day 11: Added input validation to the POST /tasks endpoint. Checks if title isnt missing and returns an error instead of crashing. Tested missing title request (got 400) and a valid request (got created task).
 Day 12: Added a DELETE /tasks/<id> endpoint to remove a task by id. Added delete_task() in db.py which had DELETE with a WHERE clause + rowcount, and a route using url path parameter, returning 404 if the id doesn't exist. Tested deleting a real task, which disappeared, and a missing id, which returned 404.
-
+Day 13: Added a PUT /tasks/<id> endpoint to update a task. Added update_task() in db.py which had a UPDATE with a WHERE clause + RETURNING and a route reusing title validation, returning 404 if the id doesn't exist. Tested updating a tasks title and status, which changed.
 ## GitHub Commits
 https://github.com/priedniekskarlis-beep/taskmanager/commit/2bd78ddf77d4f6c36edf1c35ece441d1685a72eb
 https://github.com/priedniekskarlis-beep/taskmanager/commit/c01152706b63181766cf8d61ffbc6ab9f0bf3f23

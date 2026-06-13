@@ -39,3 +39,15 @@ def delete_task(task_id):
     conn.commit()
     conn.close()
     return deleted_count
+
+def update_task(task_id, title, status):
+    conn = get_connection()
+    with conn.cursor(row_factory=dict_row) as cur:
+        cur.execute(
+            "UPDATE tasks SET title = %s, status = %s WHERE id = %s RETURNING id, title, status",
+            (title, status, task_id),
+        )
+        updated_task = cur.fetchone()
+    conn.commit()
+    conn.close()
+    return updated_task
