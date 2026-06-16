@@ -2,19 +2,18 @@
 
 ## Student Information
 
-Student name:
-Group:
+Student name: Kārlis Priednieks
+Group: PX25
 Project ID: 1-6
 Project name: Task Management Application
 Week number: 3
 
 ## Planned Work For This Week
 
-Main feature implementation, validation, authentication if required, UI improvements, integration testing.
+Main feature implementation, frontend/form validation, authentication if required, UI improvements, integration testing.
 
 ## Completed Work
-
-Describe what was completed during the week.
+Day 15: Finish practicing and rebuilding of db.py and app.py to strengthen my understanding of the backend.
 
 ## GitHub Commits
 
