@@ -13,23 +13,21 @@ Week number: 3
 Main feature implementation, frontend/form validation, authentication if required, UI improvements, integration testing.
 
 ## Completed Work
-Day 15: Finish practicing and rebuilding of db.py and app.py to strengthen my understanding of the backend.
+- Day 15: Finish practicing and rebuilding of db.py and app.py to strengthen my understanding of the backend.
+- Day 16: Connected the frontend to the backend. Replaced hardcoded cards with fetched cards from GET /tasks, created in the column matching its status.
 
 ## GitHub Commits
 
 Add links or commit hashes.
 
 ## Screenshots / Evidence
-
-List screenshots added to 07_screenshots_and_evidence.
+cross_origin_error.png - shows the browser refusing to give data across origins by default
 
 ## Problems Found
-
-Describe technical problems, blockers, or questions.
+The browser blocked the fetch with a CORS error for security reasons, because the page and API are different origins.
 
 ## Solutions Applied
-
-Describe how problems were solved.
+Enabled flask-cors 'CORS(app)', which added the Access-Control-Allow-Origin header to responses.
 
 ## Next Week Plan
 
