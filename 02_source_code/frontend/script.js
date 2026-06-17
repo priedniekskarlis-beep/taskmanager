@@ -6,6 +6,16 @@ function renderTask(task) {
     card.textContent = task.title
     const column = document.querySelector(`.column[data-status="${task.status}"]`)
     if (column) {column.appendChild(card)}
+    const button = document.createElement("button")
+    button.textContent = "Delete"
+    card.appendChild(button)
+    button.addEventListener("click", () => {
+        fetch(`http://127.0.0.1:5000/tasks/${task.id}`, {method: "DELETE"})
+        .then(response => {
+            if (response.ok) card.remove()
+        })
+    })
+    
 }
 
 fetch("http://127.0.0.1:5000/tasks")
