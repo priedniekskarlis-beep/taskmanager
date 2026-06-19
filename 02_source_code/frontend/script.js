@@ -77,3 +77,16 @@ function updateCounts() {
     const doneCount = document.querySelectorAll(`.column[data-status="Done"] .card`) .length
     document.querySelector("#count-done").textContent = `Done: ${doneCount}`
 }
+
+const searchInput = document.querySelector("#search")
+searchInput.addEventListener("input", () => {
+    const text = searchInput.value.toLowerCase()
+    document.querySelectorAll(".card").forEach(card => {
+        const title = card.querySelector("span").textContent.toLowerCase()
+        if (title.includes(text)) {
+             card.style.display = "" 
+        } else {
+        card.style.display = "none"
+         }
+    })
+})

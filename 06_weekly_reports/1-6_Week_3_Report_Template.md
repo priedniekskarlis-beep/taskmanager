@@ -16,7 +16,7 @@ Main feature implementation, frontend/form validation, authentication if require
 - Day 15: Finish practicing and rebuilding of db.py and app.py to strengthen my understanding of the backend.
 - Day 16: Connected the frontend to the backend. Replaced hardcoded cards with fetched cards from GET /tasks, created in the column matching its status. Made the submit form create tasks via POST /tasks, so new tasks now show up instantly.
 - Day 17: Added a delete button that removes the card from the board with DELETE /tasks/<id>. Added an edit button that prompts for a new title and updates the task with PUT /tasks/<id>.
-- Day 19: Made the dashboard task summary count real data and update.
+- Day 19: Made the dashboard task summary count real data and update. Added a search filter that shows only tasks whose title match the one typed in the search bar.
 
 ## GitHub Commits
 
