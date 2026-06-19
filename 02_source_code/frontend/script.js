@@ -13,7 +13,10 @@ function renderTask(task) {
     deleteButton.addEventListener("click", () => {
         fetch(`http://127.0.0.1:5000/tasks/${task.id}`, {method: "DELETE"})
         .then(response => {
-            if (response.ok) card.remove()
+            if (response.ok) {
+                card.remove()
+                updateCounts()
+            }
         })
     })
     const editButton = document.createElement("button")
@@ -41,7 +44,10 @@ function renderTask(task) {
 
 fetch("http://127.0.0.1:5000/tasks")
     .then(response => response.json())
-    .then(data => data.forEach(task => renderTask(task)))
+    .then(data => {
+        data.forEach(task => renderTask(task))
+        updateCounts()
+    })
 
 const form = document.querySelector(".taskentry")
     form.addEventListener("submit", event => {
@@ -56,6 +62,18 @@ const form = document.querySelector(".taskentry")
         })
         
         .then(response => response.json())
-        .then(newTask => renderTask(newTask))
+        .then(newTask => {
+            renderTask(newTask)
+            updateCounts()
+        })
           
     })
+
+function updateCounts() {
+    const todoCount = document.querySelectorAll(`.column[data-status="To do"] .card`) .length
+    document.querySelector("#count-todo").textContent = `To do: ${todoCount}`
+    const inprogressCount = document.querySelectorAll(`.column[data-status="In progress"] .card`) .length
+    document.querySelector("#count-inprogress").textContent = `In progress: ${inprogressCount}`
+    const doneCount = document.querySelectorAll(`.column[data-status="Done"] .card`) .length
+    document.querySelector("#count-done").textContent = `Done: ${doneCount}`
+}
