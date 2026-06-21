@@ -14,17 +14,17 @@ def get_connection():
 def get_all_tasks():
     conn = get_connection()
     with conn.cursor(row_factory=dict_row) as cur:
-        cur.execute("SELECT id, title, status FROM tasks ORDER BY id")
+        cur.execute("SELECT id, title, status, description, priority, due_date, assigned_to FROM tasks ORDER BY id")
         tasks = cur.fetchall()
     conn.close()
     return tasks
 
-def create_task(title, status):
+def create_task(title, status, description, priority, due_date, assigned_to):
     conn = get_connection()
     with conn.cursor(row_factory=dict_row) as cur:
         cur.execute(
-            "INSERT INTO tasks (title, status) VALUES (%s, %s) RETURNING id, title, status",
-            (title, status),
+            "INSERT INTO tasks (title, status, description, priority, due_date, assigned_to) VALUES (%s, %s, %s, %s, %s, %s) RETURNING id, title, status, description, priority, due_date, assigned_to",
+            (title, status, description, priority, due_date, assigned_to),
         )
         new_task = cur.fetchone()
     conn.commit()
@@ -40,12 +40,12 @@ def delete_task(task_id):
     conn.close()
     return deleted_count
 
-def update_task(task_id, title, status):
+def update_task(task_id, title, status, description, priority, due_date, assigned_to):
     conn = get_connection()
     with conn.cursor(row_factory=dict_row) as cur:
         cur.execute(
-            "UPDATE tasks SET title = %s, status = %s WHERE id = %s RETURNING id, title, status",
-            (title, status, task_id),
+            "UPDATE tasks SET title = %s, status = %s, description = %s, priority = %s, due_date = %s, assigned_to = %s WHERE id = %s RETURNING id, title, status, description, priority, due_date, assigned_to",
+            (title, status, description, priority, due_date, assigned_to, task_id),
         )
         updated_task = cur.fetchone()
     conn.commit()

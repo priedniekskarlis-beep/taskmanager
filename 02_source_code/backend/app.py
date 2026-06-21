@@ -17,7 +17,11 @@ def tasks():
             return jsonify({"error": "Title is required"}), 400
         title = data["title"]
         status = data.get("status", "To do")
-        new_task = create_task(title, status)
+        description = data.get("description")
+        priority = data.get("priority", "Medium")
+        due_date = data.get("due_date")
+        assigned_to = data.get("assigned_to")
+        new_task = create_task(title, status, description, priority, due_date, assigned_to)
         return jsonify(new_task), 201
     return jsonify(get_all_tasks())
 
@@ -35,7 +39,11 @@ def update_task_route(task_id):
         return jsonify({"error": "Title is required"}), 400
     title = data["title"]
     status = data.get("status", "To do")
-    updated = update_task(task_id, title, status)
+    description = data.get("description")
+    priority = data.get("priority", "Medium")
+    due_date = data.get("due_date")
+    assigned_to = data.get("assigned_to")
+    updated = update_task(task_id, title, status, description, priority, due_date, assigned_to)
     if updated is None:
         return jsonify({"error": "Task not found"}), 404
     return jsonify(updated), 200
