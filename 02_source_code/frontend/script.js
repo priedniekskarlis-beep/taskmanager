@@ -72,10 +72,13 @@ const form = document.querySelector(".taskentry")
 function updateCounts() {
     const todoCount = document.querySelectorAll(`.column[data-status="To do"] .card`) .length
     document.querySelector("#count-todo").textContent = `To do: ${todoCount}`
+    document.querySelector("#empty-todo").style.display = todoCount === 0 ? "" : "none"
     const inprogressCount = document.querySelectorAll(`.column[data-status="In progress"] .card`) .length
     document.querySelector("#count-inprogress").textContent = `In progress: ${inprogressCount}`
+    document.querySelector("#empty-inprogress").style.display = inprogressCount === 0 ? "" : "none"
     const doneCount = document.querySelectorAll(`.column[data-status="Done"] .card`) .length
     document.querySelector("#count-done").textContent = `Done: ${doneCount}`
+    document.querySelector("#empty-done").style.display = doneCount === 0 ? "" : "none"
 }
 
 const searchInput = document.querySelector("#search")
