@@ -7,6 +7,19 @@ function renderTask(task) {
     titleEl.textContent = task.title 
     const column = document.querySelector(`.column[data-status="${task.status}"]`)
     card.appendChild(titleEl)
+    const priorityEl = document.createElement("p")
+    priorityEl.textContent = `Priority: ${task.priority}`
+    card.appendChild(priorityEl)
+    if (task.due_date) {
+        const dueDateEl = document.createElement("p")
+        dueDateEl.textContent = `Due date: ${new Date(task.due_date).toISOString().slice(0, 10)}`
+        card.appendChild(dueDateEl)
+    }
+    if (task.description) {
+        const descriptionEl = document.createElement("p")
+        descriptionEl.textContent = `Description: ${task.description}`
+        card.appendChild(descriptionEl)
+    }
     const deleteButton = document.createElement("button")
     deleteButton.textContent = "Delete"
     card.appendChild(deleteButton)
@@ -54,11 +67,20 @@ const form = document.querySelector(".taskentry")
         event.preventDefault()
         const taskTitle = document.querySelector("#task-title") .value
         const taskStatus = document.querySelector("#task-status") .value 
+        const taskDescription = document.querySelector("#task-description") .value
+        const taskPriority = document.querySelector("#task-priority") .value
+        const taskDueDate = document.querySelector("#task-due-date") .value
 
         fetch("http://127.0.0.1:5000/tasks", {
         method: "POST",
         headers: {"Content-Type": "application/json"},
-        body: JSON.stringify({title: taskTitle, status: taskStatus})
+        body: JSON.stringify({
+            title: taskTitle, 
+            status: taskStatus,
+            description: taskDescription,
+            priority: taskPriority,
+            due_date: taskDueDate || null
+        })
         })
         
         .then(response => response.json())

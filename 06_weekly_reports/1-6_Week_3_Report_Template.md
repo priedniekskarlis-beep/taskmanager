@@ -18,6 +18,7 @@ Main feature implementation, frontend/form validation, authentication if require
 - Day 17: Added a delete button that removes the card from the board with DELETE /tasks/<id>. Added an edit button that prompts for a new title and updates the task with PUT /tasks/<id>.
 - Day 19: Made the dashboard task summary count real data and update. Added a search filter that shows only tasks whose title match the one typed in the search bar.
 - Day 20: Added more task fields to the backend 
+- Day 21: Added sending and displaying more task fields in the frontend. added 'no tasks yet' placeholders to empty columns.
 
 ## GitHub Commits
 
