@@ -29,6 +29,7 @@ Add links or commit hashes.
 - create_task_via_form.png - shows a task on the board which was created with the submit form
 - delete_request_200.png - the network tab in DevTools shows that clicking delete sends DELETE /tasks/6, and the server responds 200
 - edit_put_200.png - editing a task sends PUT /tasks/5 and the server responds 200
+- card_detail_view.png - shows the card in an opened state displaying the tasks details
 
 ## Problems Found
 - The browser blocked the fetch with a CORS error for security reasons, because the page and API are different origins.

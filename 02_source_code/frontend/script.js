@@ -1,5 +1,9 @@
 console.log("script.js loaded")
 
+document.querySelector("#modal-close").addEventListener("click", () => {
+    document.querySelector("#modal-overlay").style.display = "none"
+})
+
 function renderTask(task) {
     const card = document.createElement("article")
     card.classList.add("card")
@@ -23,7 +27,8 @@ function renderTask(task) {
     const deleteButton = document.createElement("button")
     deleteButton.textContent = "Delete"
     card.appendChild(deleteButton)
-    deleteButton.addEventListener("click", () => {
+    deleteButton.addEventListener("click", (event) => {
+        event.stopPropagation()
         fetch(`http://127.0.0.1:5000/tasks/${task.id}`, {method: "DELETE"})
         .then(response => {
             if (response.ok) {
@@ -35,7 +40,8 @@ function renderTask(task) {
     const editButton = document.createElement("button")
     editButton.textContent = "Edit"
     card.appendChild(editButton)
-    editButton.addEventListener("click", () => {
+    editButton.addEventListener("click", (event) => {
+        event.stopPropagation()
         const newTitle = prompt("New title:", task.title)
         if(newTitle) {
             fetch(`http://127.0.0.1:5000/tasks/${task.id}`, {
@@ -51,8 +57,17 @@ function renderTask(task) {
             })
         }
     })
-
+    card.addEventListener("click", () => openModal(task))
         if(column) {column.appendChild(card)}
+}
+
+function openModal(task) {
+    document.querySelector("#modal-title").textContent = task.title
+    document.querySelector("#modal-status").textContent = `Status: ${task.status}`
+    document.querySelector("#modal-priority").textContent = `Priority: ${task.priority}`
+    document.querySelector("#modal-description").textContent = task.description ? `Description: ${task.description}` : "No description"
+    document.querySelector("#modal-due-date").textContent = task.due_date ? `Due date: ${new Date(task.due_date).toISOString().slice(0, 10)}` : "No due date"
+    document.querySelector("#modal-overlay").style.display = "flex"
 }
 
 fetch("http://127.0.0.1:5000/tasks")
