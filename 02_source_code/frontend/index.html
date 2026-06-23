@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>1-6 - Task Management Application</title>
-  <link rel="stylesheet" href="style.css?v=3">
+  <link rel="stylesheet" href="style.css?v=4">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -103,11 +103,28 @@
   <div id="modal-overlay" style="display: none">
   <div class="modal">
     <button id="modal-close">✕</button>
-      <h2 id="modal-title"></h2>  
-      <p  id="modal-status"></p>    
-      <p  id="modal-priority"></p>      
-      <p  id="modal-due-date"></p>     
-      <p  id="modal-description"></p>      
+    <label>Title:
+      <input type="text" id="modal-title">
+    </label>
+    <label>Status:
+      <select id="modal-status">
+        <option>To do</option>
+        <option>In progress</option>
+        <option>Done</option>
+      </select>
+    </label>
+    <label>Priority:
+      <select id="modal-priority">
+        <option>Low</option><option>Medium</option><option>High</option>
+      </select>
+    </label>
+    <label>Due date:
+      <input type="date" id="modal-due-date">
+    </label>
+    <label>Description:
+      <textarea id="modal-description"></textarea>
+    </label>
+    <button id="modal-save">Save</button>
   </div>
 </div>
   <script defer src="script.js"></script> 

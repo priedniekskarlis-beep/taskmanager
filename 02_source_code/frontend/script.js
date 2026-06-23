@@ -1,5 +1,36 @@
 console.log("script.js loaded")
 
+let currentTask = null
+let currentCard = null
+
+document.querySelector("#modal-save").addEventListener("click", () => {
+    const title = document.querySelector("#modal-title").value
+    const status = document.querySelector("#modal-status").value
+    const priority = document.querySelector("#modal-priority").value
+    const description = document.querySelector("#modal-description").value
+    const dueDate = document.querySelector("#modal-due-date").value
+
+    fetch(`http://127.0.0.1:5000/tasks/${currentTask.id}`, {
+        method: "PUT",
+        headers: {"Content-Type": "application/json"},
+        body: JSON.stringify({
+            title: title,
+            status: status,
+            priority: priority,
+            description: description,
+            due_date: dueDate || null,
+            assigned_to: currentTask.assigned_to
+        })
+    })
+    .then(response => response.json())
+    .then(updated => {
+        currentCard.remove()
+        renderTask(updated)
+        updateCounts()
+        document.querySelector("#modal-overlay").style.display = "none"
+    })
+})
+
 document.querySelector("#modal-close").addEventListener("click", () => {
     document.querySelector("#modal-overlay").style.display = "none"
 })
@@ -37,36 +68,18 @@ function renderTask(task) {
             }
         })
     })
-    const editButton = document.createElement("button")
-    editButton.textContent = "Edit"
-    card.appendChild(editButton)
-    editButton.addEventListener("click", (event) => {
-        event.stopPropagation()
-        const newTitle = prompt("New title:", task.title)
-        if(newTitle) {
-            fetch(`http://127.0.0.1:5000/tasks/${task.id}`, {
-                method: "PUT",
-                headers: {"Content-type": "application/json"},
-                body: JSON.stringify({title: newTitle, status: task.status})
-            })
-
-            .then(response => response.json())
-            .then(updated => {
-                titleEl.textContent = updated.title
-                task.title = updated.title
-            })
-        }
-    })
-    card.addEventListener("click", () => openModal(task))
+    card.addEventListener("click", () => openModal(task, card))
         if(column) {column.appendChild(card)}
 }
 
-function openModal(task) {
-    document.querySelector("#modal-title").textContent = task.title
-    document.querySelector("#modal-status").textContent = `Status: ${task.status}`
-    document.querySelector("#modal-priority").textContent = `Priority: ${task.priority}`
-    document.querySelector("#modal-description").textContent = task.description ? `Description: ${task.description}` : "No description"
-    document.querySelector("#modal-due-date").textContent = task.due_date ? `Due date: ${new Date(task.due_date).toISOString().slice(0, 10)}` : "No due date"
+function openModal(task, card) {
+    currentTask = task
+    currentCard = card
+    document.querySelector("#modal-title").value = task.title
+    document.querySelector("#modal-status").value = task.status
+    document.querySelector("#modal-priority").value = task.priority
+    document.querySelector("#modal-description").value = task.description || ""
+    document.querySelector("#modal-due-date").value = task.due_date ? new Date(task.due_date).toISOString().slice(0, 10) : ""
     document.querySelector("#modal-overlay").style.display = "flex"
 }
 
