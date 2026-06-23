@@ -21,15 +21,22 @@ Main feature implementation, frontend/form validation, authentication if require
 - Day 21: Added sending and displaying more task fields in the frontend. added 'no tasks yet' placeholders to empty columns.
 
 ## GitHub Commits
-
-Add links or commit hashes.
+https://github.com/priedniekskarlis-beep/taskmanager/commit/7ebffc8
+https://github.com/priedniekskarlis-beep/taskmanager/commit/b580722
+https://github.com/priedniekskarlis-beep/taskmanager/commit/38cd263 
+https://github.com/priedniekskarlis-beep/taskmanager/commit/786207e
+https://github.com/priedniekskarlis-beep/taskmanager/commit/2e50e3a
+https://github.com/priedniekskarlis-beep/taskmanager/commit/cb3f866
+https://github.com/priedniekskarlis-beep/taskmanager/commit/da21e28
+https://github.com/priedniekskarlis-beep/taskmanager/commit/461b032
+https://github.com/priedniekskarlis-beep/taskmanager/commit/834cd31
+https://github.com/priedniekskarlis-beep/taskmanager/commit/f920297 
 
 ## Screenshots / Evidence
 - cross_origin_error.png - shows the browser refusing to give data across origins by default
 - create_task_via_form.png - shows a task on the board which was created with the submit form
 - delete_request_200.png - the network tab in DevTools shows that clicking delete sends DELETE /tasks/6, and the server responds 200
 - edit_put_200.png - editing a task sends PUT /tasks/5 and the server responds 200
-- card_detail_view.png - shows the card in an opened state displaying the tasks details
 
 ## Problems Found
 - The browser blocked the fetch with a CORS error for security reasons, because the page and API are different origins.
@@ -41,7 +48,7 @@ Add links or commit hashes.
 
 ## Next Week Plan
 
-Describe what will be done next.
+Detail view, admin panel access, validation, testing, bug fixing, final documentation, final report, GitHub cleanup.
 
 ## Supervisor Notes
 

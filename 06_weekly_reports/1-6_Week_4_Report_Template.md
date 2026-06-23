@@ -2,27 +2,25 @@
 
 ## Student Information
 
-Student name:
-Group:
+Student name: Kārlis Priednieks
+Group: PX25
 Project ID: 1-6
 Project name: Task Management Application
 Week number: 4
 
 ## Planned Work For This Week
 
-Testing, bug fixing, final documentation, screenshots, final report, GitHub cleanup, presentation preparation.
+Detail view, admin panel access, validation, testing, bug fixing, final documentation, final report, GitHub cleanup.
 
 ## Completed Work
-
-Describe what was completed during the week.
+Day 22: Made the card pop up with detailed information about a task.
 
 ## GitHub Commits
 
 Add links or commit hashes.
 
 ## Screenshots / Evidence
-
-List screenshots added to 07_screenshots_and_evidence.
+- card_detail_view.png - shows the card in an opened state displaying the tasks details
 
 ## Problems Found
 
