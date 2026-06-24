@@ -115,6 +115,7 @@ const form = document.querySelector(".taskentry")
         .then(newTask => {
             renderTask(newTask)
             updateCounts()
+            form.reset()
         })
           
     })
@@ -143,3 +144,13 @@ searchInput.addEventListener("input", () => {
          }
     })
 })
+
+const adminArea = document.querySelector(".admin-area")
+const roleSelect = document.querySelector(".user-select")
+
+function updateAdminVisibility() {
+    adminArea.style.display = roleSelect.value === "Admin" ? "" : "none"
+}
+
+roleSelect.addEventListener("change", updateAdminVisibility)
+updateAdminVisibility()

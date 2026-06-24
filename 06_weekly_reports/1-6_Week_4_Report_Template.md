@@ -15,6 +15,8 @@ Detail view, admin panel access, validation, testing, bug fixing, final document
 ## Completed Work
 - Day 22: Made the card pop up with detailed information about a task.
 - Day 23: Changed the editing system by making the detail modal editable with a save button that updates every field.
+- Day 24: Made the admin panel only visible to admin roled users and made the create form clear after submitting.
+
 ## GitHub Commits
 
 Add links or commit hashes.
@@ -22,14 +24,19 @@ Add links or commit hashes.
 ## Screenshots / Evidence
 - card_detail_view.png - shows the card in an opened state displaying the tasks details
 - edit_task_via_modal.png - shows the task's status being edited in the detailed view
+- admin_panel_hidden.png - shows that the admin panel is restricted and can't be viewed by non-admins
 
 ## Problems Found
 The background behind the centered modal box didnt appear initially.
 Editing a task's title ignored it's description, priority and due date.
+The admin panel stayed visible to every role even after making the role gate.
+After creating a task, the entered values stayed in the form fields.
 
 ## Solutions Applied
 Bumped the ?v= number in the stylesheet link.
 The old edit only sent title and status, but backend PUT replaces every column, so the edit prompt was replaced with an editable modal that sends all fields upon clicking the 'Save' button.
+The condition was just the string "Admin", which always returned true, so I changed it to compare the dropdown's value 'roleSelect.value'.
+Called 'form.reset()' in the submit success callback to clear the form once the task was created.
 
 ## Next Week Plan
 
