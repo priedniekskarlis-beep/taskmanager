@@ -1,3 +1,4 @@
+import os
 from flask import Flask, jsonify, request
 from db import get_all_tasks, create_task, delete_task, update_task
 from flask_cors import CORS
@@ -68,4 +69,5 @@ def update_task_route(task_id):
     return jsonify(updated), 200
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    debug = os.environ.get("FLASK_DEBUG") == "1"
+    app.run(debug=debug)
