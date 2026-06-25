@@ -17,6 +17,7 @@ Detail view, admin panel access, validation, testing, bug fixing, final document
 - Day 23: Changed the editing system by making the detail modal editable with a save button that updates every field.
 - Day 24: Made the admin panel only visible to admin roled users and made the create form clear after submitting.
 - Day 25: Added frontend validation by rejecting an empty or whitespaced title, setting character limits (140 for the title, 5000 for the description). Added error messages that appear on the create form and modal.
+Also added validation in app.py for POST and PUT to reject invalid data with 400.
 
 ## GitHub Commits
 

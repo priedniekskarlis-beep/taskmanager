@@ -5,6 +5,23 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+def validate_task(data):
+    if not data:
+        return "No data provided"
+    title = data.get("title") or ""
+    if title.strip() == "":
+        return "Title is required"
+    if len(title) > 140:
+        return "Title must be 140 characters or less"
+    description = data.get("description") or ""
+    if len(description) > 5000:
+        return "Description must be 5000 characters or less"
+    if data.get("status", "To do") not in ("To do", "In progress", "Done"):
+        return "Invalid status"
+    if data.get("priority", "Medium") not in ("Low", "Medium", "High"):
+        return "Invalid priority"
+    return None
+
 @app.route("/")
 def home():
     return "Hello from the Task Manager backend!"
@@ -13,8 +30,9 @@ def home():
 def tasks():
     if request.method == "POST":
         data = request.get_json(silent=True)
-        if not data or not data.get("title"):
-            return jsonify({"error": "Title is required"}), 400
+        error = validate_task(data)
+        if (error):
+            return jsonify({"error": error}), 400
         title = data["title"]
         status = data.get("status", "To do")
         description = data.get("description")
@@ -35,8 +53,9 @@ def delete_task_route(task_id):
 @app.route("/tasks/<int:task_id>", methods=["PUT"])
 def update_task_route(task_id):
     data = request.get_json(silent=True)
-    if not data or not data.get("title"):
-        return jsonify({"error": "Title is required"}), 400
+    error = validate_task(data)
+    if (error):
+        return jsonify({"error": error}), 400
     title = data["title"]
     status = data.get("status", "To do")
     description = data.get("description")
