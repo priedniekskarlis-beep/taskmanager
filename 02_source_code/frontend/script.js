@@ -1,5 +1,18 @@
 console.log("script.js loaded")
 
+function validateTask(title, description) {
+    if(title.trim() === "") {
+        return "Title is required"
+    }
+    if(title.length > 140) {
+        return "Title must be 140 characters or less"
+    }
+    if(description.length > 5000) {
+        return "Description must be 5000 characters or less"
+    }
+    return ""
+}
+
 let currentTask = null
 let currentCard = null
 
@@ -9,6 +22,13 @@ document.querySelector("#modal-save").addEventListener("click", () => {
     const priority = document.querySelector("#modal-priority").value
     const description = document.querySelector("#modal-description").value
     const dueDate = document.querySelector("#modal-due-date").value
+
+    const error = validateTask(title, description)
+    if(error) {
+        document.querySelector("#modal-error").textContent = error
+        return
+    }
+    document.querySelector("#modal-error").textContent = ""
 
     fetch(`http://127.0.0.1:5000/tasks/${currentTask.id}`, {
         method: "PUT",
@@ -98,6 +118,13 @@ const form = document.querySelector(".taskentry")
         const taskDescription = document.querySelector("#task-description") .value
         const taskPriority = document.querySelector("#task-priority") .value
         const taskDueDate = document.querySelector("#task-due-date") .value
+
+        const error = validateTask(taskTitle, taskDescription)
+        if (error) {
+            document.querySelector("#form-error").textContent = error
+            return
+        }
+        document.querySelector("#form-error").textContent = ""
 
         fetch("http://127.0.0.1:5000/tasks", {
         method: "POST",

@@ -76,3 +76,8 @@ header {
     flex-direction: column;   
     gap: 8px;                 
 }
+
+#form-error,
+#modal-error {
+    color: #c00;
+}

@@ -16,6 +16,7 @@ Detail view, admin panel access, validation, testing, bug fixing, final document
 - Day 22: Made the card pop up with detailed information about a task.
 - Day 23: Changed the editing system by making the detail modal editable with a save button that updates every field.
 - Day 24: Made the admin panel only visible to admin roled users and made the create form clear after submitting.
+- Day 25: Added frontend validation by rejecting an empty or whitespaced title, setting character limits (140 for the title, 5000 for the description). Added error messages that appear on the create form and modal.
 
 ## GitHub Commits
 
@@ -25,6 +26,7 @@ Add links or commit hashes.
 - card_detail_view.png - shows the card in an opened state displaying the tasks details
 - edit_task_via_modal.png - shows the task's status being edited in the detailed view
 - admin_panel_hidden.png - shows that the admin panel is restricted and can't be viewed by non-admins
+- frontend_validation.png - shows the form rejecting an empty title with a "Title is required" message
 
 ## Problems Found
 The background behind the centered modal box didnt appear initially.

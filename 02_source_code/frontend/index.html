@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <title>1-6 - Task Management Application</title>
-  <link rel="stylesheet" href="style.css?v=4">
+  <link rel="stylesheet" href="style.css?v=6">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -44,11 +44,11 @@
 
       <form class="taskentry panel">
         <label>Title:
-          <input type="text" id="task-title">
+          <input type="text" id="task-title" maxlength="140">
         </label>
 
         <label>Description:
-          <textarea id="task-description"></textarea>
+          <textarea id="task-description" maxlength="5000"></textarea>
         </label>
 
       <label>Priority:
@@ -80,9 +80,9 @@
       </label>  
 
         <button type="submit">Submit</button>  
-
-      </form>
-    </aside>
+        <p id="form-error"></p>
+    </form>
+  </aside>
 
     <main>
       <section class="column" data-status="To do">
@@ -104,7 +104,7 @@
   <div class="modal">
     <button id="modal-close">✕</button>
     <label>Title:
-      <input type="text" id="modal-title">
+      <input type="text" id="modal-title" maxlength="140">
     </label>
     <label>Status:
       <select id="modal-status">
@@ -122,9 +122,10 @@
       <input type="date" id="modal-due-date">
     </label>
     <label>Description:
-      <textarea id="modal-description"></textarea>
+      <textarea id="modal-description" maxlength="5000"></textarea>
     </label>
     <button id="modal-save">Save</button>
+    <p id="modal-error"></p>
   </div>
 </div>
   <script defer src="script.js"></script> 
