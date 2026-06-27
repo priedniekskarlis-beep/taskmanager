@@ -40,3 +40,39 @@ Each test case must include:
 2. User input is validated.
 3. Error messages do not expose stack traces.
 4. User roles are checked where roles are implemented.
+
+### TC-F-01 — Application starts successfully
+- Feature: Start app
+- Preconditions: Docker Desktop running, GitHub repo, unstarted tools
+- Test steps:
+    1. 'cd 04_docker'
+    2. 'docker compose  -f 1-6_docker-compose.yml up -d'
+    3. 'cd ../02_source_code/backend'
+    4. activate the virtual environment and run 'python app.py' after
+    5. open 'http://localhost:8080'
+- Expected result: Both containers run, backend responds, the page loads.
+- Actual result: Both containers run, backend responds, the page loads.
+- Status: Passed
+- Screenshot: test_docker_running.png,test_flask_backend_running.png
+
+### TC-F-02 — Main page opens without errors
+- Feature: Page loading
+- Preconditions: App started (Docker up, backend running), page open (http://localhost:8080)
+- Test steps:
+    1. Open the page.
+    2. Open DevTools console 'F12'
+- Expected result: Three columns render, tasks load as cards, no errors in console
+- Actual result: Three columns render, tasks load as cards, no errors in console
+- Status: Passed
+- Screenshot: test_main_page.png
+
+### TC-F-03 — User can create a new record
+- Feature: Create task
+- Preconditions: App started (Docker up, backend running), page open (http://localhost:8080)
+- Test steps:
+    1. Type a title, select a priority and status
+    2. Submit the task
+- Expected result: 
+- Actual result:
+- Status:
+- Screenshot: 
