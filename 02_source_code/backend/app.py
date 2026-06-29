@@ -6,6 +6,11 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
+VALID_STATUSES = ("To do", "In progress", "Done")
+VALID_PRIORITIES = ("Low", "Medium", "High")
+DEFAULT_STATUS = "To do"
+DEFAULT_PRIORITY = "Medium"
+
 def validate_task(data):
     if not data:
         return "No data provided"
@@ -17,9 +22,9 @@ def validate_task(data):
     description = data.get("description") or ""
     if len(description) > 5000:
         return "Description must be 5000 characters or less"
-    if data.get("status", "To do") not in ("To do", "In progress", "Done"):
+    if data.get("status", DEFAULT_STATUS) not in VALID_STATUSES:
         return "Invalid status"
-    if data.get("priority", "Medium") not in ("Low", "Medium", "High"):
+    if data.get("priority", DEFAULT_PRIORITY) not in (VALID_PRIORITIES):
         return "Invalid priority"
     return None
 
@@ -35,9 +40,9 @@ def tasks():
         if (error):
             return jsonify({"error": error}), 400
         title = data["title"]
-        status = data.get("status", "To do")
+        status = data.get("status", DEFAULT_STATUS)
         description = data.get("description")
-        priority = data.get("priority", "Medium")
+        priority = data.get("priority", DEFAULT_PRIORITY)
         due_date = data.get("due_date")
         assigned_to = data.get("assigned_to")
         new_task = create_task(title, status, description, priority, due_date, assigned_to)
@@ -58,9 +63,9 @@ def update_task_route(task_id):
     if (error):
         return jsonify({"error": error}), 400
     title = data["title"]
-    status = data.get("status", "To do")
+    status = data.get("status", DEFAULT_STATUS)
     description = data.get("description")
-    priority = data.get("priority", "Medium")
+    priority = data.get("priority", DEFAULT_PRIORITY)
     due_date = data.get("due_date")
     assigned_to = data.get("assigned_to")
     updated = update_task(task_id, title, status, description, priority, due_date, assigned_to)

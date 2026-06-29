@@ -20,7 +20,8 @@ Detail view, admin panel access, validation, testing, bug fixing, final document
 Also added validation in app.py for POST and PUT to reject invalid data with 400.
 Made Flask debug off by default so the interactive debugger cant be exposed.
 - Day 27: Started the functional tests.
-- Day 29: Completed the functional, technical and security test cases with screenshots.
+- Day 29: Completed the functional, technical and security test cases with screenshots. 
+Ran SonarLint static analysis: fixed the duplicated literal and input label problems. 
 ## GitHub Commits
 
 Add links or commit hashes.

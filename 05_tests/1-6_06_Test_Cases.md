@@ -254,3 +254,13 @@ Each test case must include:
 - Screenshot: test_admin_panel.png
 - Note: Roles are only gated on the frontend, backend doesn't enforce roles as auth is out of scope
 
+### TC-S-05 — Static code analysis (SonarLint) --- bonus ---
+- Feature: Code quality and security analysis
+- Preconditions: SonarLint (SonarQube for IDE) installed in VS Code, Node.js installed (for JS analysis)
+- Test steps:
+    1. Open the backend (app.py, db.py) and frontend (script.js, index.html) in VS Code
+    2. Check the results in the SonarQube panel
+- Expected result: No security risks. Any problems reviewed and fixed or explained.
+- Actual result: 4 small problems, no security risks. Fixed: duplicated "To do" literal in app.py (extracted constants), and missing labels on the search, as well as role inputs in index.html. Unchanged: "prefer top-level await" in script.js (requires changing the entire script to an ES module which is out of scope).
+- Status: Passed (no security risks; quality problems fixed and explained)
+- Screenshot: test_sonarlint.png
