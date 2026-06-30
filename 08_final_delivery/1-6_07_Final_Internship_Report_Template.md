@@ -19,7 +19,7 @@ Main requirements:
 
 Create form with validation - task entry form in index.html, validated by validateTask() (script.js) + validate_task() (app.py)
 List view with search - the Kanban task board, search box matches cards live (searchInput listener, script.js)
-Detail view for one record — clicking a card opens the detail modal (openModal(), script.js)
+Detail view - clicking a card opens the detail modal (openModal(), script.js)
 Edit - the modal is editable, Save sends 'PUT /tasks/<id>' with all fields
 Delete - Delete button activates 'DELETE /tasks/<id>'
 Status / workflow - status "To do" / "In progress" / "Done", cards render in the matching column
@@ -34,7 +34,7 @@ Administration area shows only for Admin (updateAdminVisibility(), script.js)
 
 Non-functional:
 Runs locally with Docker Compose
-Logical folder structure (01–08)
+Logical folder structure (01-08)
 No secrets committed (.gitignore)
 Database initialized from schema.sql + seed_data.sql
 Readable on laptop, basic mobile support with viewport meta 
@@ -159,46 +159,46 @@ Evidence: the test cases document (05_tests/1-6_06_Test_Cases.md) and the test_-
 
 Weeks 1-4:
 
-webapp_design.png / wireframe.png                     – early design/wireframe
-github_repo.png                   – the GitHub repository
-wsl_error.png                     – a setup error encountered
-cross_origin_error.png            – CORS error before flask-cors
-docker_running.png                – containers running (earlier)
-database_running.png              – DBeaver connected to the DB
-flask_backend_running.png         – first Flask app running
-localhost_starter.png             – early frontend page
-tasks_api_json.png                – /tasks API returning JSON
-tasks_after_post.png              – task list after a POST
-create_task_via_form.png          – task created via the form
-post_validation.png               – POST rejects missing title (400)
-put_task_updated.png / edit_put_200.png                  – edit (PUT) updating a task / 200
-delete_task.png / delete_request_200.png            – delete + 200 response
-card_detail_view.png              – detail modal
-edit_task_via_modal.png           – editing via the modal
-admin_panel_hidden.png            – admin panel hidden
-frontend_validation.png           – frontend validation message
+webapp_design.png / wireframe.png                     - early design/wireframe
+github_repo.png                   - the GitHub repository
+wsl_error.png                     - a setup error encountered
+cross_origin_error.png            - CORS error before flask-cors
+docker_running.png                - containers running (earlier)
+database_running.png              - DBeaver connected to the DB
+flask_backend_running.png         - first Flask app running
+localhost_starter.png             - early frontend page
+tasks_api_json.png                - /tasks API returning JSON
+tasks_after_post.png              - task list after a POST
+create_task_via_form.png          - task created via the form
+post_validation.png               - POST rejects missing title (400)
+put_task_updated.png / edit_put_200.png                  - edit (PUT) updating a task / 200
+delete_task.png / delete_request_200.png            - delete + 200 response
+card_detail_view.png              - detail modal
+edit_task_via_modal.png           - editing via the modal
+admin_panel_hidden.png            - admin panel hidden
+frontend_validation.png           - frontend validation message
 
 Test evidence:
 
-test_docker_running.png        – Docker containers running
-test_flask_backend_running.png – Flask backend running (Debug mode: off)
-test_main_page.png             – board loads, no console errors
-test_create_task.png           – creating a task
-test_task_list.png             – tasks listed in their columns
-test_detail_view.png           – detail modal open
-test_edit_task.png             – editing a task via the modal
-test_delete_task.png           – task deleted
-test_required_validation.png   – empty title rejected ("Title is required")
-test_search.png                – search filter showing only matches
-test_invalid_data.png          – API rejects invalid status (400)
-test_db_connection.png         – GET /tasks returns JSON (DB connection)
-test_schema.png                – DBeaver: 3 tables exist
-test_seed_data.png             – DBeaver: seeded admin user
-test_no_secrets.png            – .gitignore / no secrets committed
-test_error_no_trace.png        – generic 500, no stack trace (debug off)
-test_admin_panel.png           – admin panel hidden for non-admin
-test_persistence.png           – data persists after a restart
-test_sonarlint.png             – SonarLint findings
+test_docker_running.png        - Docker containers running
+test_flask_backend_running.png - Flask backend running (Debug mode: off)
+test_main_page.png             - board loads, no console errors
+test_create_task.png           - creating a task
+test_task_list.png             - tasks listed in their columns
+test_detail_view.png           - detail modal open
+test_edit_task.png             - editing a task via the modal
+test_delete_task.png           - task deleted
+test_required_validation.png   - empty title rejected ("Title is required")
+test_search.png                - search filter showing only matches
+test_invalid_data.png          - API rejects invalid status (400)
+test_db_connection.png         - GET /tasks returns JSON (DB connection)
+test_schema.png                - DBeaver: 3 tables exist
+test_seed_data.png             - DBeaver: seeded admin user
+test_no_secrets.png            - .gitignore / no secrets committed
+test_error_no_trace.png        - generic 500, no stack trace (debug off)
+test_admin_panel.png           - admin panel hidden for non-admin
+test_persistence.png           - data persists after a restart
+test_sonarlint.png             - SonarLint findings
 
 
 
@@ -215,14 +215,14 @@ Pull requests: no pull requests were used for a solo project on main
 
 Repository structure (numbered folders for clarity):
 
-01_documentation — requirements, weekly plan, setup guide
-02_source_code — frontend (HTML/CSS/JS) + backend (Flask app.py, db.py)
-03_database — schema + seed SQL
-04_docker — Docker Compose file
-05_tests — test cases
-06_weekly_reports — Week 1–4 reports
-07_screenshots_and_evidence — screenshots
-08_final_delivery — final report + delivery checklist
+01_documentation - requirements, weekly plan, setup guide
+02_source_code - frontend (HTML/CSS/JS) + backend (Flask app.py, db.py)
+03_database - schema + seed SQL
+04_docker - Docker Compose file
+05_tests - test cases
+06_weekly_reports - Week 1-4 reports
+07_screenshots_and_evidence - screenshots
+08_final_delivery - final report + delivery checklist
 README.md and database_documentation.md at the root
 
 ## 10. Problems and Solutions

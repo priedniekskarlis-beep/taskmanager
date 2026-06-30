@@ -35,10 +35,18 @@ https://github.com/priedniekskarlis-beep/taskmanager/commit/b51e07f
 https://github.com/priedniekskarlis-beep/taskmanager/commit/235b95c   
 
 ## Screenshots / Evidence
-- card_detail_view.png - shows the card in an opened state displaying the tasks details
-- edit_task_via_modal.png - shows the task's status being edited in the detailed view
-- admin_panel_hidden.png - shows that the admin panel is restricted and can't be viewed by non-admins
-- frontend_validation.png - shows the form rejecting an empty title with a "Title is required" message
+
+card_detail_view.png - shows the card in an opened state displaying the tasks details
+![](../07_screenshots_and_evidence/card_detail_view.png)
+
+edit_task_via_modal.png - shows the task's status being edited in the detailed view
+![](../07_screenshots_and_evidence/edit_task_via_modal.png)
+
+admin_panel_hidden.png - shows that the admin panel is restricted and can't be viewed by non-admins
+![](../07_screenshots_and_evidence/admin_panel_hidden.png)
+
+frontend_validation.png - shows the form rejecting an empty title with a "Title is required" message
+![](../07_screenshots_and_evidence/frontend_validation.png)
 
 ## Problems Found
 The background behind the centered modal box didnt appear initially.

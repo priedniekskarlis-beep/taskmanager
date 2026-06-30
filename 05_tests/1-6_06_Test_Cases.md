@@ -41,7 +41,7 @@ Each test case must include:
 3. Error messages do not expose stack traces.
 4. User roles are checked where roles are implemented.
 
-### TC-F-01 — Application starts successfully
+### TC-F-01 - Application starts successfully
 - Feature: Start app
 - Preconditions: Docker Desktop running, GitHub repo, unstarted tools
 - Test steps:
@@ -55,7 +55,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_docker_running.png,test_flask_backend_running.png
 
-### TC-F-02 — Main page opens without errors
+### TC-F-02 - Main page opens without errors
 - Feature: Page loading
 - Preconditions: App started (Docker up, backend running), page open (http://localhost:8080)
 - Test steps:
@@ -66,7 +66,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_main_page.png
 
-### TC-F-03 — User can create a new record
+### TC-F-03 - User can create a new record
 - Feature: Create task
 - Preconditions: App started (Docker up, backend running), page open (http://localhost:8080)
 - Test steps:
@@ -78,7 +78,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_create_task.png
 
-### TC-F-04 — User can view a list of records
+### TC-F-04 - User can view a list of records
 - Feature: Read tasks
 - Preconditions: App started, page open, at least one task exists
 - Test steps:
@@ -88,7 +88,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_task_list.png
 
-### TC-F-05 — User can open record details
+### TC-F-05 - User can open record details
 - Feature: Detail modal
 - Preconditions: App started, page open, at least one task exists
 - Test steps:
@@ -98,7 +98,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_detail_view.png
 
-### TC-F-06 — User can edit an existing record
+### TC-F-06 - User can edit an existing record
 - Feature: Edit task (modal)
 - Preconditions: App started, page open, at least one task exists
 - Test steps:
@@ -110,7 +110,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_edit_task.png
 
-### TC-F-07 — User can delete a record
+### TC-F-07 - User can delete a record
 - Feature: Delete task
 - Preconditions: App started, page open, at least one task exists
 - Test steps:
@@ -120,7 +120,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_delete_task.png
 
-### TC-F-08 — Required fields are validated
+### TC-F-08 - Required fields are validated
 - Feature: Frontend validation
 - Preconditions: App started, page open
 - Test steps:
@@ -131,7 +131,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_required_validation.png
 
-### TC-F-09 — Invalid data is rejected
+### TC-F-09 - Invalid data is rejected
 - Feature: Backend validation
 - Preconditions: App started (backend running), Postman open
 - Test steps:
@@ -143,7 +143,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_invalid_data.png
 
-### TC-F-10 — Search / filtering works
+### TC-F-10 - Search / filtering works
 - Feature: Search filter
 - Preconditions: App started, page open, multiple tasks with unique titles have been made
 - Test steps:
@@ -153,7 +153,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_search.png
 
-### TC-T-01 — Docker containers start successfully
+### TC-T-01 - Docker containers start successfully
 - Feature: Containers
 - Preconditions: Docker Desktop running
 - Test steps:
@@ -165,7 +165,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_docker_running.png
 
-### TC-T-02 — Database connection works
+### TC-T-02 - Database connection works
 - Feature: Backend + DB
 - Preconditions: Containers + backend running
 - Test steps:
@@ -175,7 +175,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_db_connection.png
 
-### TC-T-03 — Database schema is created automatically
+### TC-T-03 - Database schema is created automatically
 - Feature: Schema init
 - Preconditions: Containers + backend running
 - Test steps:
@@ -186,7 +186,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_schema.png
 
-### TC-T-04 — Seed data is loaded
+### TC-T-04 - Seed data is loaded
 - Feature: Seed init
 - Preconditions: Containers + backend running, DBeaver is loaded
 - Test steps:
@@ -196,7 +196,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_seed_data.png
 
-### TC-T-05 — App restarts without losing data
+### TC-T-05 - App restarts without losing data
 - Feature: Data persistence (volume)
 - Preconditions: Containers + backend running, page open
 - Test steps:
@@ -204,12 +204,12 @@ Each test case must include:
     2. 'docker compose -f 1-6_docker-compose.yml down'
     3. 'docker compose -f 1-6_docker-compose.yml up -d'
     4. Reload the board
-- Expected result: The task is still there — the db_data volume persisted it.
+- Expected result: The task is still there - the db_data volume persisted it.
 - Actual result: The task was still on the page.
 - Status: Passed
 - Screenshot: test_persistence.png
 
-### TC-S-01 — Passwords/secrets are not committed to GitHub
+### TC-S-01 - Passwords/secrets are not committed to GitHub
 - Feature: Secret management
 - Preconditions: Repo pushed to GitHub
 - Test steps:
@@ -220,7 +220,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_no_secrets.png
 
-### TC-S-02 — User input is validated
+### TC-S-02 - User input is validated
 - Feature: Input validation (frontend + backend)
 - Preconditions: App started, Postman downloaded
 - Test steps:
@@ -231,7 +231,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: frontend_validation.png, test_invalid_data.png
 
-### TC-S-03 — Error messages do not expose stack traces
+### TC-S-03 - Error messages do not expose stack traces
 - Feature: Safe error handling (Flask debug off)
 - Preconditions: Backend running with debug off
 - Test steps:
@@ -242,7 +242,7 @@ Each test case must include:
 - Status: Passed
 - Screenshot: test_error_no_trace.png
 
-### TC-S-04 — User roles are checked (where implemented)
+### TC-S-04 - User roles are checked (where implemented)
 - Feature: Role-based UI gating
 - Preconditions: App running, page open
 - Test steps:
@@ -254,7 +254,7 @@ Each test case must include:
 - Screenshot: test_admin_panel.png
 - Note: Roles are only gated on the frontend, backend doesn't enforce roles as auth is out of scope
 
-### TC-S-05 — Static code analysis (SonarLint) --- bonus ---
+### TC-S-05 - Static code analysis (SonarLint) --- bonus ---
 - Feature: Code quality and security analysis
 - Preconditions: SonarLint (SonarQube for IDE) installed in VS Code, Node.js installed (for JS analysis)
 - Test steps:

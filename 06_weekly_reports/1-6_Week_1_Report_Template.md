@@ -25,28 +25,40 @@ Created a wireframe. Completed the database verification, installation and docum
 
 
 ## GitHub Commits
-https://github.com/priedniekskarlis-beep/taskmanager/commit/08a0c6f3d9fca37d014714f21ccf3c4da1f0f868
-https://github.com/priedniekskarlis-beep/taskmanager/commit/fca5ca8f29a22f2823811dc6c40ac8fcfc76c5c8
-https://github.com/priedniekskarlis-beep/taskmanager/commit/1febb8134e4a8de20c4dde510eca6ee12ee5b58c
-https://github.com/priedniekskarlis-beep/taskmanager/commit/94d09c4883774413d53f2082a7752eb52a53d59d
-https://github.com/priedniekskarlis-beep/taskmanager/commit/ffbbc1a9e56606f4f3a26d554caffe5004fdb417
-https://github.com/priedniekskarlis-beep/taskmanager/commit/4cb21fb1174588f2f45a980f2d6234d47f7dad4c
-https://github.com/priedniekskarlis-beep/taskmanager/commit/135a5f5b5e3aee888163740d8991803174c392de
-https://github.com/priedniekskarlis-beep/taskmanager/commit/c4efe052d62c6f0caec2410afbe8f8485de010ad
-https://github.com/priedniekskarlis-beep/taskmanager/commit/766de93dc7adc66cc71dafa4099d6bd0729c1488
-https://github.com/priedniekskarlis-beep/taskmanager/commit/29e482758e91543075faae16d9c786240dd7ff68
-https://github.com/priedniekskarlis-beep/taskmanager/commit/a2e884b446864eb605da478e2115d3bc3c5aa3f7
-https://github.com/priedniekskarlis-beep/taskmanager/commit/34a696d6c99a87c20aebc41ca9b2298e046267ab
+https://github.com/priedniekskarlis-beep/taskmanager/commit/08a0c6f
+https://github.com/priedniekskarlis-beep/taskmanager/commit/fca5ca8
+https://github.com/priedniekskarlis-beep/taskmanager/commit/1febb81
+https://github.com/priedniekskarlis-beep/taskmanager/commit/94d09c4
+https://github.com/priedniekskarlis-beep/taskmanager/commit/ffbbc1a
+https://github.com/priedniekskarlis-beep/taskmanager/commit/4cb21fb
+https://github.com/priedniekskarlis-beep/taskmanager/commit/135a5f5
+https://github.com/priedniekskarlis-beep/taskmanager/commit/c4efe05
+https://github.com/priedniekskarlis-beep/taskmanager/commit/766de93
+https://github.com/priedniekskarlis-beep/taskmanager/commit/29e4827
+https://github.com/priedniekskarlis-beep/taskmanager/commit/a2e884b
+https://github.com/priedniekskarlis-beep/taskmanager/commit/34a696d
 
 
 
 ## Screenshots / Evidence
-- docker_running.png - shows docker compose ps output
-- github_repo.png - shows files that are pushed to the GitHub repository
-- localhost_starter.png - shows the starter page at localhost:8080
-- wsl_error.png - shows WSL network error
-- database_running.png - shows the database schema running in docker
-- webapp_design.png - shows the current webapp ui design
+
+docker_running.png - shows docker compose ps output
+![](../07_screenshots_and_evidence/docker_running.png)
+
+github_repo.png - shows files that are pushed to the GitHub repository
+![](../07_screenshots_and_evidence/github_repo.png)
+
+localhost_starter.png - shows the starter page at localhost:8080
+![](../07_screenshots_and_evidence/localhost_starter.png)
+
+wsl_error.png - shows WSL network error
+![](../07_screenshots_and_evidence/wsl_error.png)
+
+database_running.png - shows the database schema running in docker
+![](../07_screenshots_and_evidence/database_running.png)
+
+webapp_design.png - shows the current webapp ui design
+![](../07_screenshots_and_evidence/webapp_design.png)
 
 ## Problems Found
 Access to the WSL network was blocked while connecting WSL to VS Code.

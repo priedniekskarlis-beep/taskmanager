@@ -33,10 +33,18 @@ https://github.com/priedniekskarlis-beep/taskmanager/commit/834cd31
 https://github.com/priedniekskarlis-beep/taskmanager/commit/f920297 
 
 ## Screenshots / Evidence
-- cross_origin_error.png - shows the browser refusing to give data across origins by default
-- create_task_via_form.png - shows a task on the board which was created with the submit form
-- delete_request_200.png - the network tab in DevTools shows that clicking delete sends DELETE /tasks/6, and the server responds 200
-- edit_put_200.png - editing a task sends PUT /tasks/5 and the server responds 200
+
+cross_origin_error.png - shows the browser refusing to give data across origins by default
+![](../07_screenshots_and_evidence/cross_origin_error.png)
+
+create_task_via_form.png - shows a task on the board which was created with the submit form
+![](../07_screenshots_and_evidence/create_task_via_form.png)
+
+delete_request_200.png - the network tab in DevTools shows that clicking delete sends DELETE /tasks/6, and the server responds 200
+![](../07_screenshots_and_evidence/delete_request_200.png)
+
+edit_put_200.png - editing a task sends PUT /tasks/5 and the server responds 200
+![](../07_screenshots_and_evidence/edit_put_200.png)
 
 ## Problems Found
 - The browser blocked the fetch with a CORS error for security reasons, because the page and API are different origins.

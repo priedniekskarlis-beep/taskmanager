@@ -18,14 +18,14 @@ A Kanban-style web application for managing tasks with statuses, priorities, due
 
 Before you start, install these two programs:
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) — runs the app and database
-- [Git](https://git-scm.com/) — downloads the project files
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) - runs the app and database
+- [Git](https://git-scm.com/) - downloads the project files
 
 ## Setup Instructions
 
 ### 1. Clone the repository
 
-Open a terminal (in VS Code: `View → Terminal`) and run:
+Open a terminal (in VS Code: `View -> Terminal`) and run:
 
 ```bash
 git clone https://github.com/priedniekskarlis-beep/taskmanager.git
@@ -38,7 +38,7 @@ Open Docker Desktop and wait until it shows **"Engine running"** in the bottom l
 
 ### 3. Start the application
 
-In your terminal, navigate to the docker folder and start the containers:
+In your terminal, go to the docker folder and start the containers:
 
 ```bash
 cd 04_docker
@@ -62,8 +62,8 @@ docker ps
 ```
 
 You should see two containers listed:
-- `1-6_app` — the web server (nginx)
-- `1-6_database` — the PostgreSQL database
+- `1-6_app` - the web server (nginx)
+- `1-6_database` - the PostgreSQL database
 
 ### 5. Open the app
 
@@ -86,11 +86,11 @@ Username - `student`
 Local-lab password set in docker-compose.yml
 Port - `5432`
 
-The database is initialised automatically when Docker starts. The SQL scripts in `03_database/` create the tables and load sample data — you do not need to run anything manually.
+The database is initialised automatically when Docker starts. The SQL scripts in `03_database/` create the tables and load sample data - you do not need to run anything manually.
 
 ### Tables
 
-**users** — stores people who can log in and be assigned tasks
+**users** - stores people who can log in and be assigned tasks
 
 | Column | Type | Description |
 |---|---|---|
@@ -102,7 +102,7 @@ The database is initialised automatically when Docker starts. The SQL scripts in
 | created_at | TIMESTAMP | When the record was created |
 | updated_at | TIMESTAMP | When the record was last changed |
 
-**tasks** — stores the individual tasks shown on the Kanban board
+**tasks** - stores the individual tasks shown on the Kanban board
 
 | Column | Type | Description |
 |---|---|---|
@@ -116,7 +116,7 @@ The database is initialised automatically when Docker starts. The SQL scripts in
 | created_at | TIMESTAMP | When the record was created |
 | updated_at | TIMESTAMP | When the record was last changed |
 
-**audit_logs** — table present, not actively populated
+**audit_logs** - table present, not actively populated
 
 | Column | Type | Description |
 |---|---|---|
@@ -129,24 +129,21 @@ The database is initialised automatically when Docker starts. The SQL scripts in
 
 ## Project Structure
 
-```
-taskmanager/
-├── 01_documentation/       # Project requirements and setup guides
-├── 02_source_code/         # HTML, CSS, JavaScript source files
-│   ├── frontend/           # index.html and static assets (served by nginx)
-│   └── backend/            # API code
-├── 03_database/            # SQL schema and seed data scripts
-├── 04_docker/              # Docker Compose configuration
-├── 05_tests/               # Test case documentation
-├── 06_weekly_reports/      # Weekly progress reports
-├── 07_screenshots_and_evidence/  # Screenshots of the running application
-└── 08_final_delivery/      # Final report and delivery checklist
-```
+- **01_documentation/** - project requirements and setup guides
+- **02_source_code/** - HTML, CSS, JavaScript source files
+  - **frontend/** - index.html and static assets (served by nginx)
+  - **backend/** - API code
+- **03_database/** - SQL schema and seed data scripts
+- **04_docker/** - Docker Compose configuration
+- **05_tests/** - test case documentation
+- **06_weekly_reports/** - weekly progress reports
+- **07_screenshots_and_evidence/** - screenshots of the running application
+- **08_final_delivery/** - final report and delivery checklist
 
 ## Security Notes
 
 - Database credentials are a throwaway local password set in docker-compose.yml, no real secrets are used. .gitignore excludes venv/ and any .env so unwanted things aren't pushed.
-- No real personal data is used — all database content is sample/mock data
+- No real personal data is used - all database content is sample/mock data
 - This project is for local learning only and must not be deployed to a public server
 
 ## Known Issues
