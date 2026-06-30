@@ -12,3 +12,5 @@ Thumbs.db
 .vscode/
 
 __pycache__/
+
+backend_practice/

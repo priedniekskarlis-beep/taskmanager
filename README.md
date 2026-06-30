@@ -8,7 +8,7 @@ A Kanban-style web application for managing tasks with statuses, priorities, due
 - Lets users create, edit, and delete tasks
 - Supports three user roles: Administrator, Standard User, and Guest
 - Stores all data in a PostgreSQL database
-- Runs entirely in Docker — no manual installation of Node, Python, or databases needed
+- Docker runs the frontend and database, the backend runs separately in Python
 
 ## Wireframe
 
@@ -42,7 +42,17 @@ In your terminal, navigate to the docker folder and start the containers:
 
 ```bash
 cd 04_docker
-docker compose -f 1-6_docker-compose.yml up -d --build
+docker compose -f 1-6_docker-compose.yml up -d
+```
+
+Start the backend:
+
+```bash
+cd 02_source_code/backend
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+pip install -r requirements.txt
+python app.py
 ```
 
 ### 4. Check it is running
@@ -73,7 +83,7 @@ The project uses **PostgreSQL 15**.
 
 Database name - `practice_project` 
 Username - `student` 
-Password stored in `.env` (not pushed to GitHub)
+Local-lab password set in docker-compose.yml
 Port - `5432`
 
 The database is initialised automatically when Docker starts. The SQL scripts in `03_database/` create the tables and load sample data — you do not need to run anything manually.
@@ -87,7 +97,7 @@ The database is initialised automatically when Docker starts. The SQL scripts in
 | id | SERIAL | Unique identifier (auto-generated) |
 | full_name | VARCHAR(120) | Person's full name |
 | email | VARCHAR(160) | Unique email address |
-| role | VARCHAR(50) | `Admin`, `Standard User`, or `Guest` |
+| role | VARCHAR(50) | `administrator`, `user` |
 | password_hash | VARCHAR(255) | Hashed password (never stored in plain text) |
 | created_at | TIMESTAMP | When the record was created |
 | updated_at | TIMESTAMP | When the record was last changed |
@@ -99,14 +109,14 @@ The database is initialised automatically when Docker starts. The SQL scripts in
 | id | SERIAL | Unique identifier (auto-generated) |
 | title | VARCHAR(140) | Short task title |
 | description | TEXT | Longer task details (optional) |
-| status | VARCHAR(50) | `To do`, `In Progress`, or `Done` |
+| status | VARCHAR(50) | `To do`, `In progress`, or `Done` |
 | priority | VARCHAR(50) | `Low`, `Medium`, or `High` |
 | due_date | DATE | Deadline date (optional) |
 | assigned_to | INT | Links to the `users` table (foreign key) |
 | created_at | TIMESTAMP | When the record was created |
 | updated_at | TIMESTAMP | When the record was last changed |
 
-**audit_logs** — automatically records who changed what and when
+**audit_logs** — table present, not actively populated
 
 | Column | Type | Description |
 |---|---|---|
@@ -135,11 +145,13 @@ taskmanager/
 
 ## Security Notes
 
-- The `.env` file holds database credentials and is listed in `.gitignore` — it is **never** pushed to GitHub
+- Database credentials are a throwaway local password set in docker-compose.yml, no real secrets are used. .gitignore excludes venv/ and any .env so unwanted things aren't pushed.
 - No real personal data is used — all database content is sample/mock data
 - This project is for local learning only and must not be deployed to a public server
 
 ## Known Issues
 
-- The backend API is not yet connected to the frontend (in progress)
-- The user login system is planned but not yet implemented
+- Assignment ("assigned to") isn't added to the UI
+- No authentication
+- Mobile layout is basic
+- The seed task id 1 has a status-case quirk

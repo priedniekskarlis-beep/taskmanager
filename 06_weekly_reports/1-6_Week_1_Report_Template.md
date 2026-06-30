@@ -13,15 +13,15 @@ Week number: 1
 Project setup, repository creation, requirements review, wireframes, database draft, Docker baseline.
 
 ## Completed Work
-Day 1: Repository setup, setting up and running Docker, getting the starter page to show up.
-Day 2: Wrote database code to implement users and tasks tables, and added starting data to them.
+- Day 1: Repository setup, setting up and running Docker, getting the starter page to show up.
+- Day 2: Wrote database code to implement users and tasks tables, and added starting data to them.
 Checked the columns and the connection between tasks and users inside the database through terminal.
-Day 3: Created a git attributes file to convert line endings across Windows and Linux.
+- Day 3: Created a git attributes file to convert line endings across Windows and Linux.
 Created a wireframe. Completed the database verification, installation and documentation.
-Day 4: Fully wrote the README file for week 1 for project setup and overview. Created a .gitignore file for .env protection. Fixed the incomplete SQL schema and seed.
-Day 5: Wrote the initial HTML file in frontend.
-day 6: Wrote the initial CSS file in frontend.
-day 7: Expanded the frontend to match the wireframe sketch. Added an admin panel, reordered the task entry form fields and moved it to the bottom. Styled the sidebar with 3 boxes using a reusable CSS .panel class and a flexbox column layout, making the sidebar overseeable.
+- Day 4: Fully wrote the README file for week 1 for project setup and overview. Created a .gitignore file for .env protection. Fixed the incomplete SQL schema and seed.
+- Day 5: Wrote the initial HTML file in frontend.
+- Day 6: Wrote the initial CSS file in frontend.
+- Day 7: Expanded the frontend to match the wireframe sketch. Added an admin panel, reordered the task entry form fields and moved it to the bottom. Styled the sidebar with 3 boxes using a reusable CSS .panel class and a flexbox column layout, making the sidebar overseeable.
 
 
 ## GitHub Commits
@@ -41,12 +41,12 @@ https://github.com/priedniekskarlis-beep/taskmanager/commit/34a696d6c99a87c20aeb
 
 
 ## Screenshots / Evidence
-docker_running.png - shows docker compose ps output
-github_repo.png - shows files that are pushed to the GitHub repository
-localhost_starter.png - shows the starter page at localhost:8080
-wsl_error.png - shows WSL network error
-database_running.png - shows the database schema running in docker
-webapp_design.png - shows the current webapp ui design
+- docker_running.png - shows docker compose ps output
+- github_repo.png - shows files that are pushed to the GitHub repository
+- localhost_starter.png - shows the starter page at localhost:8080
+- wsl_error.png - shows WSL network error
+- database_running.png - shows the database schema running in docker
+- webapp_design.png - shows the current webapp ui design
 
 ## Problems Found
 Access to the WSL network was blocked while connecting WSL to VS Code.
